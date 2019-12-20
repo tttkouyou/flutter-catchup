@@ -38,8 +38,14 @@ samples, guidance on mobile development, and a full API reference.
 
 ## function
 
-* 買いたいもののボタンを押すことで、購入予定に追加される。
-* 購入予定を確認することで、押したボタンの種類、押された時間が表示される。
+* 買いたいもののボタンを押すことで、画面下にアラートのようなものが表示され、購入予定画面に追加される。
+
+![buyproject-home](https://user-images.githubusercontent.com/51155933/71222625-8cfe1000-2314-11ea-87f1-b8add6b0f608.png)
+
+![buyproject-home-select](https://user-images.githubusercontent.com/51155933/71223050-fc283400-2315-11ea-8a0a-44ff593209a5.png)
+
+
+* 購入予定ボタンを押して、購入予定画面を確認することで、押したボタンの種類、押された時間が表示される。
 <!-- * 購入予定の画面で「完了」ボタンを押すと、購入履歴に入る。 -->
 <!-- * 購入履歴では、購入が完了した順で並んでいる。 -->
 
