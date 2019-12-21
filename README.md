@@ -46,6 +46,9 @@ samples, guidance on mobile development, and a full API reference.
 
 
 * 購入予定ボタンを押して、購入予定画面を確認することで、押したボタンの種類、押された時間が表示される。
+
+![buyproject-list](https://user-images.githubusercontent.com/51155933/71301578-0b75b300-23e4-11ea-83f2-2059b45dc8e3.png)
+
 <!-- * 購入予定の画面で「完了」ボタンを押すと、購入履歴に入る。 -->
 <!-- * 購入履歴では、購入が完了した順で並んでいる。 -->
 
