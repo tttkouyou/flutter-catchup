@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
+import './eggButtons.dart';
+import './meatButton.dart';
+import './fishButton.dart';
+import './purchasePlanButton.dart';
+
 void main() {
   runApp(MyApp());
 }
+
+final _scaffoldKey = GlobalKey<ScaffoldState>();
 
 class MyApp extends StatefulWidget {
   @override
@@ -11,11 +18,9 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  List<String> arrary = [];
+  List<String> purchasePlanList = [];
+  List<Widget> typeButtons = [EggButtons(), MeatButtons(), FishButtons()];
   final _scaffoldKey = GlobalKey<ScaffoldState>();
-  var eggCount = 0;
-  var meatCount = 0;
-  var fishCount = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -26,126 +31,15 @@ class _MyAppState extends State<MyApp> {
         key: _scaffoldKey,
         backgroundColor: Colors.white,
         appBar: AppBar(title: Text('お買い物サポート'), backgroundColor: Colors.orange),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Row(
-              // types button
-              children: <Widget>[_eggButton(eggCount), _meatButton(meatCount), _fishButton(fishCount)],
-            ),
-            _PurchasePlan()
-          ],
+        body: GridView.count(
+          crossAxisCount: 3,
+          children: List.generate(3, (index) {
+            return Container(
+              child: typeButtons[index],
+            );
+          }),
         ),
       ),
     );
-  }
-
-  Widget _eggButton(eggCount) {
-    return ButtonTheme(
-        minWidth: 83.0,
-        height: 83.0,
-        child: RaisedButton(
-          textColor: Colors.white,
-          padding: EdgeInsets.all(27),
-          color: Colors.yellow[500],
-          child: Text("卵"),
-          onPressed: () {
-            setState(() => eggCount++);
-            final snackBar = SnackBar(
-              content: Text('「卵」を追加しました。合計：$eggCount'),
-              backgroundColor: Colors.orange[300],
-              action: SnackBarAction(
-                label: '閉じる',
-                onPressed: () {
-                  // Some code to undo the change.
-                },
-              ),
-            );
-            _scaffoldKey.currentState
-              ..removeCurrentSnackBar()
-              ..showSnackBar(snackBar);
-          },
-        ));
-  }
-
-  Widget _meatButton(meatCount) {
-    return ButtonTheme(
-        minWidth: 83.0,
-        height: 83.0,
-        child: RaisedButton(
-          textColor: Colors.white,
-          color: Colors.red[300],
-          child: Text("肉"),
-          onPressed: () {
-            setState(() => meatCount++);
-            final snackBar = SnackBar(
-              content: Text('「肉」を追加しました。合計：$meatCount'),
-              backgroundColor: Colors.orange[300],
-              action: SnackBarAction(
-                label: '閉じる',
-                onPressed: () {
-                  // Some code to undo the change.
-                },
-              ),
-            );
-            _scaffoldKey.currentState
-              ..removeCurrentSnackBar()
-              ..showSnackBar(snackBar);
-          },
-        ));
-  }
-
-  Widget _fishButton(fishCount) {
-    return ButtonTheme(
-      minWidth: 83.0,
-      height: 83.0,
-      child: RaisedButton(
-        textColor: Colors.white,
-        color: Colors.blue[300],
-        child: Text("魚"),
-        onPressed: () {
-          setState(() => fishCount++);
-          final snackBar = SnackBar(
-            content: Text('「魚」を追加しました。合計：$fishCount'),
-            backgroundColor: Colors.orange[300],
-            action: SnackBarAction(
-              label: '閉じる',
-              onPressed: () {
-                // Some code to undo the change.
-              },
-            ),
-          );
-          _scaffoldKey.currentState
-            ..removeCurrentSnackBar()
-            ..showSnackBar(snackBar);
-        },
-      ),
-    );
-  }
-
-  Widget _PurchasePlan() {
-    return ButtonTheme(
-        minWidth: 83.0,
-        height: 83.0,
-        child: RaisedButton(
-          textColor: Colors.white,
-          color: Colors.orange[300],
-          child: Text("購入予定"),
-          onPressed: () {
-            final snackBar = SnackBar(
-              content: Text('卵：$eggCount   肉：$meatCount   魚：$fishCount'),
-              backgroundColor: Colors.orange[300],
-              action: SnackBarAction(
-                label: '閉じる',
-                onPressed: () {
-                  // Some code to undo the change.
-                },
-              ),
-            );
-            _scaffoldKey.currentState
-              ..removeCurrentSnackBar()
-              ..showSnackBar(snackBar);
-          },
-        ));
   }
 }
