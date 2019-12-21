@@ -3,9 +3,12 @@ import 'package:flutter/rendering.dart';
 
 var meatCount = 0;
 
-final _scaffoldKey = GlobalKey<ScaffoldState>();
-
 class MeatButtons extends StatefulWidget {
+  MeatButtons({Key key, this.scaffoldKey}) : super(key:key);
+
+  final scaffoldKey;
+
+
   @override
   MeatButtonsState createState() => MeatButtonsState();
 }
@@ -33,11 +36,9 @@ class MeatButtonsState extends State<MeatButtons> {
                 },
               ),
             );
-            _scaffoldKey.currentState
-              ..removeCurrentSnackBar()
-              ..showSnackBar(snackBar);
+            widget.scaffoldKey.currentState.showSnackBar(snackBar);
           },
         ),
-        );
+      );
   }
 }

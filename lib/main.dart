@@ -10,7 +10,7 @@ void main() {
   runApp(MyApp());
 }
 
-final _scaffoldKey = GlobalKey<ScaffoldState>();
+
 
 class MyApp extends StatefulWidget {
   @override
@@ -18,9 +18,13 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  static final scaffoldKey = GlobalKey<ScaffoldState>();
   List<String> purchasePlanList = [];
-  List<Widget> typeButtons = [EggButtons(), MeatButtons(), FishButtons()];
-  final _scaffoldKey = GlobalKey<ScaffoldState>();
+  List<Widget> typeButtons = [
+    EggButtons(scaffoldKey: scaffoldKey,),
+    MeatButtons(scaffoldKey: scaffoldKey,),
+    FishButtons(scaffoldKey: scaffoldKey,),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -28,10 +32,11 @@ class _MyAppState extends State<MyApp> {
       title: 'buyer support App',
       theme: ThemeData(),
       home: Scaffold(
-        key: _scaffoldKey,
+        key: scaffoldKey,
         backgroundColor: Colors.white,
         appBar: AppBar(title: Text('お買い物サポート'), backgroundColor: Colors.orange),
-        body: GridView.count(
+        body:
+        GridView.count(
           crossAxisCount: 3,
           children: List.generate(3, (index) {
             return Container(

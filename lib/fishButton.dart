@@ -3,9 +3,11 @@ import 'package:flutter/rendering.dart';
 
 var fishCount = 0;
 
-final _scaffoldKey = GlobalKey<ScaffoldState>();
-
 class FishButtons extends StatefulWidget {
+  FishButtons({Key key, this.scaffoldKey}) : super(key: key);
+
+  final scaffoldKey;
+
   @override
   FishButtonsState createState() => FishButtonsState();
 }
@@ -33,9 +35,7 @@ class FishButtonsState extends State<FishButtons> {
                 },
               ),
             );
-            _scaffoldKey.currentState
-              ..removeCurrentSnackBar()
-              ..showSnackBar(snackBar);
+            widget.scaffoldKey.currentState.showSnackBar(snackBar);
           },
         ));
   }
