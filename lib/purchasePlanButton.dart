@@ -7,21 +7,19 @@ class PurchasePlanButton extends StatefulWidget {
   PurchasePlanButton({
     Key key,
     this.scaffoldKey,
-    this.index,
   }) : super(key: key);
 
   final scaffoldKey;
-  final index;
 
   @override
-  PurchasePlanButtonsState createState() => PurchasePlanButtonsState();
+  PurchasePlanButtonState createState() => PurchasePlanButtonState();
 }
 
-class PurchasePlanButtonsState extends State<PurchasePlanButton> {
+class PurchasePlanButtonState extends State<PurchasePlanButton> {
   @override
   Widget build(BuildContext context) {
     return ButtonTheme(
-      minWidth: 83.0,
+      minWidth: 100.0,
       height: 83.0,
       child: RaisedButton(
         textColor: Colors.white,

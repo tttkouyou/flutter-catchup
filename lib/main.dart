@@ -31,14 +31,16 @@ class _MyAppState extends State<MyApp> {
         key: scaffoldKey,
         backgroundColor: Colors.white,
         appBar: AppBar(title: Text('お買い物サポート'), backgroundColor: Colors.orange),
+        persistentFooterButtons: <Widget>[
+          PurchasePlanButton(),
+        ],
         body: GridView.count(
           crossAxisCount: 3,
           children: List.generate(3, (index) {
-            return Container(
-              child: ProductButton(scaffoldKey: scaffoldKey, index: index),
-            );
+            return ProductButton(scaffoldKey: scaffoldKey, index: index);
           }),
         ),
+
       ),
     );
   }

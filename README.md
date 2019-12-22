@@ -67,8 +67,8 @@ samples, guidance on mobile development, and a full API reference.
 
 ## 使用したライブラリ
 
-| ライブラリ名 | 役割 |
-| :----------- | :--- |
+| ライブラリ名 | 役割 | 関連URL |
+| :----------- | :--- | :------ |
 
 ## 階層
 
