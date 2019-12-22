@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-import './eggButtons.dart';
-import './meatButton.dart';
-import './fishButton.dart';
+import './productButton.dart';
 import './purchasePlanButton.dart';
 
 void main() {
   runApp(MyApp());
 }
-
-
 
 class MyApp extends StatefulWidget {
   @override
@@ -20,11 +16,11 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   static final scaffoldKey = GlobalKey<ScaffoldState>();
   List<String> purchasePlanList = [];
-  List<Widget> typeButtons = [
-    EggButtons(scaffoldKey: scaffoldKey,),
-    MeatButtons(scaffoldKey: scaffoldKey,),
-    FishButtons(scaffoldKey: scaffoldKey,),
-  ];
+  // List<Widget> typeButtons = [
+  //   EggButton(scaffoldKey: scaffoldKey,),
+  //   MeatButton(scaffoldKey: scaffoldKey,),
+  //   FishButton(scaffoldKey: scaffoldKey,),
+  // ];
 
   @override
   Widget build(BuildContext context) {
@@ -35,12 +31,11 @@ class _MyAppState extends State<MyApp> {
         key: scaffoldKey,
         backgroundColor: Colors.white,
         appBar: AppBar(title: Text('お買い物サポート'), backgroundColor: Colors.orange),
-        body:
-        GridView.count(
+        body: GridView.count(
           crossAxisCount: 3,
           children: List.generate(3, (index) {
             return Container(
-              child: typeButtons[index],
+              child: ProductButton(scaffoldKey: scaffoldKey, index: index),
             );
           }),
         ),
