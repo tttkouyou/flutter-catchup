@@ -32,7 +32,7 @@ class _MyAppState extends State<MyApp> {
         backgroundColor: Colors.white,
         appBar: AppBar(title: Text('お買い物サポート'), backgroundColor: Colors.orange),
         persistentFooterButtons: <Widget>[
-          PurchasePlanButton(),
+          PurchasePlanButton(scaffoldKey: scaffoldKey,),
         ],
         body: GridView.count(
           crossAxisCount: 3,
