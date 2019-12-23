@@ -42,7 +42,6 @@ class ProductButtonState extends State<ProductButton> {
             borderRadius: BorderRadius.circular(25.0),
           ),
           textColor: Colors.white,
-          // padding: EdgeInsets.all(27),
           color: ingredientColor[widget.index.toInt()],
           child: Text(
             ingredientName[widget.index.toInt()],

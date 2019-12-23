@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-// import 'package:flutter/rendering.dart';
-// import 'package:flutter_catchup/purchasePlanButton.dart';
-
-import './productButton.dart';
 
 class ArticleList extends StatelessWidget {
   ArticleList({this.purchasePlanList});
