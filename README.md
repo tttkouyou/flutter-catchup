@@ -25,7 +25,7 @@ samples, guidance on mobile development, and a full API reference.
 
 <!-- * 買い物するときに、以前に買ったものと同じものを買って無駄買いしてしまう。 -->
 
-## asnwer
+## answer
 
 * メモよりも簡単に一つのボタンで、簡単に買いたいものを記録することができる買い物専用のメモのようなもの
 
@@ -45,7 +45,8 @@ samples, guidance on mobile development, and a full API reference.
 ![buyproject-home-select](https://user-images.githubusercontent.com/51155933/71223050-fc283400-2315-11ea-8a0a-44ff593209a5.png)
 
 
-* 購入予定ボタンを押して、購入予定画面を確認することで、押したボタンの種類、押された時間が表示される。
+* 購入予定ボタンを押して、購入予定画面を確認することで、押したボタンの種類、購入予定個数が確認できる。
+<!-- 押された時間が表示される。 -->
 
 ![buyproject-list](https://user-images.githubusercontent.com/51155933/71301578-0b75b300-23e4-11ea-83f2-2059b45dc8e3.png)
 
@@ -56,9 +57,12 @@ samples, guidance on mobile development, and a full API reference.
 
 ## 変数
 
-| 変数名 | 変数型 | 役割                                                                                                 |
-| :----- | :----- | :--------------------------------------------------------------------------------------------------- |
-| array  | string | 食材ボタンを押すと配列に対応した食材名を追加。<br>購入予定画面の購入予定表示にて使用。（実装未完了） |
+| 変数名           | 変数型       | 役割                                                                                       |
+| :--------------- | :----------- | :----------------------------------------------------------------------------------------- |
+| purchasePlanList | (List)string | 食材ボタンを押すと配列に対応した食材名を追加。<br>購入予定画面の購入予定表示にて使用。     |
+| ingredientName   | (List)string | 食材ボタンの文字が格納されている。                                                         |
+| ingredientColor  | (List)color  | 食材ボタンのカラーコードが格納されている。                                                 |
+| count            | int          | 食材ボタンを押された数、もとい食材の数を格納する変数。食材ボタンを押した際の通知に使われる |
 
 ## 関数
 
