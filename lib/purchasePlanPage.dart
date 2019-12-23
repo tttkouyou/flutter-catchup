@@ -2,22 +2,30 @@ import 'package:flutter/material.dart';
 // import 'package:flutter/rendering.dart';
 // import 'package:flutter_catchup/purchasePlanButton.dart';
 
-class PurchasePlanPage extends StatefulWidget {
-  @override
-  PurchasePlanPageState createState() => PurchasePlanPageState();
-}
+import './productButton.dart';
 
-class PurchasePlanPageState extends State<PurchasePlanPage> {
+class ArticleList extends StatelessWidget {
+  ArticleList({this.purchasePlanList});
+  final List<String> purchasePlanList;
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        title: 'buyer support App',
-        home: Scaffold(
-          backgroundColor: Colors.white,
-          appBar: AppBar(title: Text('購入予定'), backgroundColor: Colors.orange),
-        body: Center(child: Text('hello world'),
-        ),
-        ),
-        );
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('購入予定'),
+        backgroundColor: Colors.orange,
+      ),
+      body: ListView.builder(
+        itemCount: purchasePlanList.length,
+        itemBuilder: (BuildContext context, int index) {
+          return Card(
+            color: Colors.grey[300],
+            child: ListTile(
+              title: Text(purchasePlanList[index]),
+            ),
+          );
+        },
+      ),
+    );
   }
 }
