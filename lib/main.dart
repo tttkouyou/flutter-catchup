@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import './productButton.dart';
-import './purchasePlanButton.dart';
+import './topPage.dart';
 
 void main() {
   runApp(MyApp());
@@ -24,31 +23,9 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'buyer support App',
-      theme: ThemeData(),
-      home: Scaffold(
-        key: scaffoldKey,
-        backgroundColor: Colors.white,
-        appBar: AppBar(title: Text('お買い物サポート'), backgroundColor: Colors.orange),
-        floatingActionButton:
-            PurchasePlanButton(purchasePlanList: purchasePlanList),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-        body: GridView.count(
-          crossAxisCount: 3,
-          children: List.generate(
-            3,
-            (index) {
-              return ProductButton(
-                scaffoldKey: scaffoldKey,
-                index: index,
-                purchasePlanList: purchasePlanList,
-                additem: additem,
-              );
-            },
-          ),
-        ),
-      ),
-    );
+    return TopPage(
+        purchasePlanList: purchasePlanList,
+        additem: additem,
+        scaffoldKey: scaffoldKey);
   }
 }
