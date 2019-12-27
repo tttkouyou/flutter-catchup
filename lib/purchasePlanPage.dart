@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class ArticleList extends StatelessWidget {
-  ArticleList({this.purchasePlanList});
+  ArticleList({
+    this.purchasePlanList,
+  });
   final List<String> purchasePlanList;
 
   @override
