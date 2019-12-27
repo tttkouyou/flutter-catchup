@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 
+import 'main.dart';
 import './purchasePlanPage.dart';
 
 class PurchasePlanButton extends StatelessWidget {
-  PurchasePlanButton({this.purchasePlanList});
+  PurchasePlanButton({
+    this.purchasePlanList,
+  });
   final purchasePlanList;
 
   void purchasePage(BuildContext context, _purchasePlanList) {
     Navigator.of(context).push(
       MaterialPageRoute(
-          builder: (context) =>
-              ArticleList(purchasePlanList: _purchasePlanList)),
+        builder: (context) => ArticleList(purchasePlanList: _purchasePlanList),
+      ),
     );
+    // Navigator.pushNamed(context, "/ArticleList");
   }
 
   @override
