@@ -8,12 +8,14 @@ class ProductButton extends StatefulWidget {
     this.index,
     this.purchasePlanList,
     this.additem,
+    this.listCount,
   }) : super(key: key);
 
   final scaffoldKey;
   final index;
   final purchasePlanList;
   final additem;
+  final listCount;
 
   @override
   ProductButtonState createState() => ProductButtonState();
@@ -62,7 +64,8 @@ class ProductButtonState extends State<ProductButton> {
               ),
             );
             widget.scaffoldKey.currentState.showSnackBar(snackBar);
-          }),
+          },
+        ),
     );
   }
 }
