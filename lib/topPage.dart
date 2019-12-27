@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import './productButton.dart';
 import './purchasePlanButton.dart';
+import './addFoodButton.dart';
 
 class TopPage extends StatelessWidget {
   TopPage({Key, key, this.purchasePlanList, this.additem, this.scaffoldKey});
@@ -9,6 +10,7 @@ class TopPage extends StatelessWidget {
   final additem;
   final scaffoldKey;
 
+  int listCount = 4;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -19,21 +21,23 @@ class TopPage extends StatelessWidget {
         backgroundColor: Colors.white,
         appBar: AppBar(title: Text('お買い物サポート'), backgroundColor: Colors.orange),
         floatingActionButton:
-            PurchasePlanButton(purchasePlanList: purchasePlanList),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-        body: GridView.count(
-          crossAxisCount: 3,
-          children: List.generate(
-            3,
-            (index) {
-              return ProductButton(
+            Row(mainAxisAlignment: MainAxisAlignment.end, children: <Widget>[
+          PurchasePlanButton(purchasePlanList: purchasePlanList),
+          AddFoodButton(),
+        ]),
+        body: GridView.builder(
+          itemCount: listCount,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 3,
+          ),
+          itemBuilder: (context, index) {
+            return ProductButton(
                 scaffoldKey: scaffoldKey,
                 index: index,
                 purchasePlanList: purchasePlanList,
                 additem: additem,
-              );
-            },
-          ),
+                listCount: listCount);
+          },
         ),
       ),
     );
