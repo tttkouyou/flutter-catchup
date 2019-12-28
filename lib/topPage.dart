@@ -41,16 +41,17 @@ class TopPage extends StatelessWidget {
                 ),
               ),
             ),
+            AddFoodButton(),
             ListTile(
-              leading: Icon(Icons.add_circle_outline),
-              title: Text('食品ボタンを追加',
+              leading: Icon(Icons.settings),
+              title: Text('設定',
               style: TextStyle(
                 color: Colors.orange[500],
                 fontSize: 20,
               ),
               ),
               onTap: () {},
-            )
+            ),
           ],
           ),
         ),
