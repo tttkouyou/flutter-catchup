@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import './addFoodButtonPage.dart';
 
 class AddFoodButton extends StatelessWidget {
-  void addFoodButtonPage(BuildContext context, _) {
+  void addFoodButtonPage(BuildContext context) {
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) => AddFoodButtonPage(),
@@ -13,16 +13,16 @@ class AddFoodButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(left: 13.0),
-      child: FloatingActionButton(
-        child: Icon(
-          Icons.add,
-          color: Colors.white,
+    return ListTile(
+      leading: Icon(Icons.add_circle_outline),
+      title: Text(
+        '食品ボタンを追加',
+        style: TextStyle(
+          color: Colors.orange[500],
+          fontSize: 20,
         ),
-        backgroundColor: Colors.orange[300],
-        onPressed: () {},
       ),
+      onTap: () => addFoodButtonPage(context),
     );
   }
 }
