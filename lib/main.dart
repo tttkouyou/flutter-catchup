@@ -17,9 +17,11 @@ class _MyAppState extends State<MyApp> {
   List<String> purchasePlanList = [];
 
   additem(String item) {
-    setState(() {
-      purchasePlanList.add(item);
-    });
+    setState(
+      () {
+        purchasePlanList.add(item);
+      },
+    );
   }
 
   List<String> ingredientName = ['卵', '肉', '魚'];
@@ -28,6 +30,15 @@ class _MyAppState extends State<MyApp> {
     Colors.red[500],
     Colors.blue[500]
   ];
+
+  addButton(String item, item_2) {
+    setState(
+      () {
+        ingredientName.add(item);
+        ingredientColor.add(item_2);
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,6 +51,7 @@ class _MyAppState extends State<MyApp> {
         scaffoldKey: scaffoldKey,
         ingredientName: ingredientName,
         ingredientColor: ingredientColor,
+        addButton: addButton,
       ),
       routes: {
         '/ArticleList': (BuildContext context) => ArticleList(),

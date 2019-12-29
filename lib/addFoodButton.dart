@@ -5,22 +5,22 @@ import './addFoodButtonPage.dart';
 class AddFoodButton extends StatelessWidget {
   AddFoodButton({
     Key key,
-    this.listCount,
     this.ingredientName,
     this.ingredientColor,
+    this.addButton,
   });
 
-  final listCount;
   final List<String> ingredientName;
   final List<Color> ingredientColor;
+  final addButton;
 
   void addFoodButtonPage(BuildContext context) {
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) => AddFoodButtonPage(
-          listCount:listCount,
-          ingredientName:ingredientName,
+          ingredientName: ingredientName,
           ingredientColor: ingredientColor,
+          addButton: addButton,
         ),
       ),
     );

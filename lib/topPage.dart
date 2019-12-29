@@ -12,14 +12,15 @@ class TopPage extends StatelessWidget {
     this.scaffoldKey,
     this.ingredientName,
     this.ingredientColor,
+    this.addButton,
   });
   final List<String> purchasePlanList;
   final additem;
   final scaffoldKey;
   final List<String> ingredientName;
   final List<Color> ingredientColor;
+  final addButton;
 
-  int listCount = 3;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,9 +46,9 @@ class TopPage extends StatelessWidget {
               ),
             ),
             AddFoodButton(
-              listCount: listCount,
               ingredientName: ingredientName,
               ingredientColor: ingredientColor,
+              addButton: addButton,
             ),
             ListTile(
               leading: Icon(Icons.settings),
@@ -67,7 +68,8 @@ class TopPage extends StatelessWidget {
           PurchasePlanButton(purchasePlanList: purchasePlanList),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       body: GridView.builder(
-        itemCount: listCount,
+        // itemCount: listCount,
+        itemCount: ingredientName.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3,
         ),
@@ -77,7 +79,6 @@ class TopPage extends StatelessWidget {
             index: index,
             purchasePlanList: purchasePlanList,
             additem: additem,
-            listCount: listCount,
             ingredientName: ingredientName,
             ingredientColor: ingredientColor,
           );
