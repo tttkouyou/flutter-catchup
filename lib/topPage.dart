@@ -6,15 +6,18 @@ import './addFoodButton.dart';
 
 class TopPage extends StatelessWidget {
   TopPage({
-    Key,
-    key,
+    Key key,
     this.purchasePlanList,
     this.additem,
     this.scaffoldKey,
+    this.ingredientName,
+    this.ingredientColor,
   });
   final List<String> purchasePlanList;
   final additem;
   final scaffoldKey;
+  final List<String> ingredientName;
+  final List<Color> ingredientColor;
 
   int listCount = 3;
   @override
@@ -41,39 +44,45 @@ class TopPage extends StatelessWidget {
                 ),
               ),
             ),
-            AddFoodButton(),
+            AddFoodButton(
+              listCount: listCount,
+              ingredientName: ingredientName,
+              ingredientColor: ingredientColor,
+            ),
             ListTile(
               leading: Icon(Icons.settings),
-              title: Text('設定',
-              style: TextStyle(
-                color: Colors.orange[500],
-                fontSize: 20,
-              ),
+              title: Text(
+                '設定',
+                style: TextStyle(
+                  color: Colors.orange[500],
+                  fontSize: 20,
+                ),
               ),
               onTap: () {},
             ),
           ],
-          ),
         ),
-      floatingActionButton:
-            PurchasePlanButton(purchasePlanList: purchasePlanList),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-    body:
-    GridView.builder(
-      itemCount: listCount,
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 3,
       ),
-      itemBuilder: (context, index) {
-        return ProductButton(
-          scaffoldKey: scaffoldKey,
-          index: index,
-          purchasePlanList: purchasePlanList,
-          additem: additem,
-          listCount: listCount,
-        );
-      },
-    ),
+      floatingActionButton:
+          PurchasePlanButton(purchasePlanList: purchasePlanList),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      body: GridView.builder(
+        itemCount: listCount,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 3,
+        ),
+        itemBuilder: (context, index) {
+          return ProductButton(
+            scaffoldKey: scaffoldKey,
+            index: index,
+            purchasePlanList: purchasePlanList,
+            additem: additem,
+            listCount: listCount,
+            ingredientName: ingredientName,
+            ingredientColor: ingredientColor,
+          );
+        },
+      ),
     );
   }
 }

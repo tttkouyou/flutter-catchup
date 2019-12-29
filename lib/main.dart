@@ -22,6 +22,13 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
+  List<String> ingredientName = ['卵', '肉', '魚'];
+  List<Color> ingredientColor = [
+    Colors.yellow[500],
+    Colors.red[500],
+    Colors.blue[500]
+  ];
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -31,6 +38,8 @@ class _MyAppState extends State<MyApp> {
         purchasePlanList: purchasePlanList,
         additem: additem,
         scaffoldKey: scaffoldKey,
+        ingredientName: ingredientName,
+        ingredientColor: ingredientColor,
       ),
       routes: {
         '/ArticleList': (BuildContext context) => ArticleList(),

@@ -3,10 +3,25 @@ import 'package:flutter/material.dart';
 import './addFoodButtonPage.dart';
 
 class AddFoodButton extends StatelessWidget {
+  AddFoodButton({
+    Key key,
+    this.listCount,
+    this.ingredientName,
+    this.ingredientColor,
+  });
+
+  final listCount;
+  final List<String> ingredientName;
+  final List<Color> ingredientColor;
+
   void addFoodButtonPage(BuildContext context) {
     Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (context) => AddFoodButtonPage(),
+        builder: (context) => AddFoodButtonPage(
+          listCount:listCount,
+          ingredientName:ingredientName,
+          ingredientColor: ingredientColor,
+        ),
       ),
     );
   }

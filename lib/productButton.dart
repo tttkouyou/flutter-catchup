@@ -9,6 +9,8 @@ class ProductButton extends StatefulWidget {
     this.purchasePlanList,
     this.additem,
     this.listCount,
+    this.ingredientName,
+    this.ingredientColor,
   }) : super(key: key);
 
   final scaffoldKey;
@@ -16,6 +18,8 @@ class ProductButton extends StatefulWidget {
   final purchasePlanList;
   final additem;
   final listCount;
+  final List<String> ingredientName;
+  final List<Color> ingredientColor;
 
   @override
   ProductButtonState createState() => ProductButtonState();
@@ -23,12 +27,6 @@ class ProductButton extends StatefulWidget {
 
 class ProductButtonState extends State<ProductButton> {
   int count = 0;
-  List<String> ingredientName = ['卵', '肉', '魚'];
-  List<Color> ingredientColor = [
-    Colors.yellow[500],
-    Colors.red[500],
-    Colors.blue[500]
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -40,32 +38,32 @@ class ProductButtonState extends State<ProductButton> {
         borderRadius: BorderRadius.circular(100.0),
       ),
       child: RaisedButton(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(25.0),
-          ),
-          textColor: Colors.white,
-          color: ingredientColor[widget.index.toInt()],
-          child: Text(
-            ingredientName[widget.index.toInt()],
-            style: TextStyle(fontSize: 30.0),
-          ),
-          onPressed: () {
-            widget.additem(ingredientName[widget.index]);
-            count += 1;
-            final snackBar = SnackBar(
-              content: Text(
-                  ingredientName[widget.index.toInt()] + 'を追加しました。合計：$count'),
-              backgroundColor: Colors.orange[300],
-              action: SnackBarAction(
-                label: '閉じる',
-                onPressed: () {
-                  // Some code to undo the change.
-                },
-              ),
-            );
-            widget.scaffoldKey.currentState.showSnackBar(snackBar);
-          },
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(25.0),
         ),
+        textColor: Colors.white,
+        color: widget.ingredientColor[widget.index.toInt()],
+        child: Text(
+          widget.ingredientName[widget.index.toInt()],
+          style: TextStyle(fontSize: 30.0),
+        ),
+        onPressed: () {
+          widget.additem(widget.ingredientName[widget.index]);
+          count += 1;
+          final snackBar = SnackBar(
+            content: Text(
+                widget.ingredientName[widget.index.toInt()] + 'を追加しました。合計：$count'),
+            backgroundColor: Colors.orange[300],
+            action: SnackBarAction(
+              label: '閉じる',
+              onPressed: () {
+                // Some code to undo the change.
+              },
+            ),
+          );
+          widget.scaffoldKey.currentState.showSnackBar(snackBar);
+        },
+      ),
     );
   }
 }
