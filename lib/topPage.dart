@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import './productButton.dart';
 import './purchasePlanButton.dart';
-import './addFoodButton.dart';
+import './drawerMenu.dart';
 
 class TopPage extends StatelessWidget {
   TopPage({
@@ -17,8 +17,8 @@ class TopPage extends StatelessWidget {
   final List<String> purchasePlanList;
   final additem;
   final scaffoldKey;
-  final List<String> ingredientName;
-  final List<Color> ingredientColor;
+  final ingredientName;
+  final ingredientColor;
   final addButton;
 
   @override
@@ -30,39 +30,8 @@ class TopPage extends StatelessWidget {
         title: Text('お買い物サポート'),
         backgroundColor: Colors.orange,
       ),
-      drawer: Drawer(
-        child: ListView(
-          children: <Widget>[
-            DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.orange,
-              ),
-              child: Text(
-                'メニュー',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 28,
-                ),
-              ),
-            ),
-            AddFoodButton(
-              ingredientName: ingredientName,
-              ingredientColor: ingredientColor,
-              addButton: addButton,
-            ),
-            ListTile(
-              leading: Icon(Icons.settings),
-              title: Text(
-                '設定',
-                style: TextStyle(
-                  color: Colors.orange[500],
-                  fontSize: 20,
-                ),
-              ),
-              onTap: () {},
-            ),
-          ],
-        ),
+      drawer: DrawerMenu(
+        addButton: addButton,
       ),
       floatingActionButton:
           PurchasePlanButton(purchasePlanList: purchasePlanList),
