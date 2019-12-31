@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
+import './selectColor.dart';
+
 class AddFoodButtonPage extends StatefulWidget {
   AddFoodButtonPage({
     Key key,
@@ -19,6 +21,17 @@ class AddFoodButtonPage extends StatefulWidget {
 
 class AddFoodButtonPageState extends State<AddFoodButtonPage> {
   final _addName = TextEditingController();
+  Color newColor = Colors.orange;
+
+  void selectColor(BuildContext context,newColor) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => SelectColor(newColor: newColor,),
+      ),
+    );
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,40 +40,47 @@ class AddFoodButtonPageState extends State<AddFoodButtonPage> {
         backgroundColor: Colors.orange,
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          TextField(
-            controller: _addName,
-            style: TextStyle(
-              fontSize: 20.0,
-              color: Colors.black,
-              backgroundColor: Colors.orange,
-            ),
-            decoration: InputDecoration(
-              border: const OutlineInputBorder(),
-              labelText: '食品名の入力',
-              labelStyle: TextStyle(
-                backgroundColor: Colors.orange,
-                color: Colors.black,
+          Container(
+            padding: EdgeInsets.all(50.0),
+            child: TextField(
+              controller: _addName,
+              style: TextStyle(
+                fontSize: 20.0,
+                color: Colors.orange,
+                backgroundColor: Colors.white,
               ),
-              hintText: '食品名を入力してください',
-              hintStyle: TextStyle(
-                backgroundColor: Colors.orange,
-                color: Colors.black,
+              decoration: InputDecoration(
+                border: const OutlineInputBorder(),
+                labelText: '食品名の入力',
+                labelStyle: TextStyle(
+                  backgroundColor: Colors.white,
+                  color: Colors.orange,
+                ),
+                hintText: '食品名を入力してください',
+                hintStyle: TextStyle(
+                  backgroundColor: Colors.white,
+                  color: Colors.orange,
+                ),
               ),
             ),
           ),
-          Text(_addName.text),
+          Container(
+            margin: EdgeInsets.only(bottom: 30.0),
+          child: RaisedButton(
+            child: Text('背景色の変更'),
+            color: newColor,
+            shape: BeveledRectangleBorder(
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            onPressed: () =>selectColor(context,newColor),
+          ),
+          ),
           RaisedButton(
             onPressed: () {
-              // setState(
-              //   () {
-              //     widget.ingredientName.add(_addName.text);
-              //     widget.ingredientColor.add(Colors.blue);
-              //     _addName.clear();
-              //     Navigator.of(context).pop();
-              //   },]
+              widget.addButton(_addName.text, newColor);
               Navigator.of(context).pop();
-              widget.addButton(_addName.text, Colors.blue);
             },
             child: Text('追加'),
           ),
