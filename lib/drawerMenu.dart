@@ -6,9 +6,11 @@ class DrawerMenu extends StatelessWidget {
   DrawerMenu({
     Key key,
     this.addButton,
+    this.addButtonColor,
   });
 
   final addButton;
+  final addButtonColor;
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +31,7 @@ class DrawerMenu extends StatelessWidget {
           ),
           AddFoodButton(
             addButton: addButton,
+            addButtonColor: addButtonColor,
           ),
           ListTile(
             leading: Icon(Icons.settings),

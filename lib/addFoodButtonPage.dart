@@ -9,11 +9,13 @@ class AddFoodButtonPage extends StatefulWidget {
     this.ingredientName,
     this.ingredientColor,
     this.addButton,
+    this.addButtonColor,
   });
 
   final List<String> ingredientName;
   final List<Color> ingredientColor;
   final addButton;
+  final addButtonColor;
 
   @override
   AddFoodButtonPageState createState() => AddFoodButtonPageState();
@@ -21,16 +23,16 @@ class AddFoodButtonPage extends StatefulWidget {
 
 class AddFoodButtonPageState extends State<AddFoodButtonPage> {
   final _addName = TextEditingController();
-  Color newColor = Colors.orange;
 
-  void selectColor(BuildContext context,newColor) {
+  selectColor(BuildContext context, addButtonColor) {
     Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (context) => SelectColor(newColor: newColor,),
+        builder: (context) => SelectColor(addButtonColor: addButtonColor),
       ),
-    );
+    ).then((result) {
+    widget.addButtonColor(result);
+    });
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -68,18 +70,18 @@ class AddFoodButtonPageState extends State<AddFoodButtonPage> {
           ),
           Container(
             margin: EdgeInsets.only(bottom: 30.0),
-          child: RaisedButton(
-            child: Text('背景色の変更'),
-            color: newColor,
-            shape: BeveledRectangleBorder(
-              borderRadius: BorderRadius.circular(10.0),
+            child: RaisedButton(
+              child: Text('背景色の変更'),
+              color: Colors.orange,
+              shape: BeveledRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+              onPressed: () => selectColor(context,widget.addButtonColor),
             ),
-            onPressed: () =>selectColor(context,newColor),
-          ),
           ),
           RaisedButton(
             onPressed: () {
-              widget.addButton(_addName.text, newColor);
+              widget.addButton(_addName.text);
               Navigator.of(context).pop();
             },
             child: Text('追加'),

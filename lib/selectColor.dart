@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 class SelectColor extends StatefulWidget {
-  SelectColor({Key key, this.newColor});
+  SelectColor({
+    Key key,
+    this.addButtonColor,
+  });
 
-  Color newColor;
+  final addButtonColor;
 
   @override
   SelectColorState createState() => SelectColorState();
@@ -19,7 +22,14 @@ class SelectColorState extends State<SelectColor> {
     Colors.grey,
     Colors.black,
   ];
-  List<String> colorName = ['赤', '青', '黄色', '橙色', '鼠色', '黒'];
+  List<String> colorName = [
+    '赤',
+    '青',
+    '黄色',
+    '橙色',
+    '鼠色',
+    '黒',
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -52,8 +62,7 @@ class SelectColorState extends State<SelectColor> {
                 style: TextStyle(fontSize: 25.0),
               ),
               onPressed: () {
-                widget.newColor = colorCode[index];
-                Navigator.of(context).pop(widget.newColor);
+                Navigator.pop(context,colorCode[index]);
               },
             ),
           );

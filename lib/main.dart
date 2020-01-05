@@ -24,16 +24,27 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
-  addButton(String item, item_2) {
+  addButton(String item) {
     setState(
       () {
         ingredientName.add(item);
-        ingredientColor.add(item_2);
       },
     );
   }
 
-  List<String> ingredientName = ['卵', '肉', '魚'];
+  addButtonColor(item) {
+    setState(
+      () {
+        ingredientColor.add(item);
+      },
+    );
+  }
+
+  List<String> ingredientName = [
+    '卵',
+    '肉',
+    '魚',
+  ];
   List<Color> ingredientColor = [
     Colors.yellow[500],
     Colors.red[500],
@@ -52,6 +63,7 @@ class _MyAppState extends State<MyApp> {
         ingredientName: ingredientName,
         ingredientColor: ingredientColor,
         addButton: addButton,
+        addButtonColor: addButtonColor,
       ),
       routes: {
         '/ArticleList': (BuildContext context) => ArticleList(),

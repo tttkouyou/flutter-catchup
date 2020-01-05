@@ -13,6 +13,7 @@ class TopPage extends StatelessWidget {
     this.ingredientName,
     this.ingredientColor,
     this.addButton,
+    this.addButtonColor,
   });
   final List<String> purchasePlanList;
   final additem;
@@ -20,6 +21,7 @@ class TopPage extends StatelessWidget {
   final ingredientName;
   final ingredientColor;
   final addButton;
+  final addButtonColor;
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +34,7 @@ class TopPage extends StatelessWidget {
       ),
       drawer: DrawerMenu(
         addButton: addButton,
+        addButtonColor: addButtonColor,
       ),
       floatingActionButton:
           PurchasePlanButton(purchasePlanList: purchasePlanList),

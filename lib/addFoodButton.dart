@@ -8,11 +8,13 @@ class AddFoodButton extends StatelessWidget {
     this.ingredientName,
     this.ingredientColor,
     this.addButton,
+    this.addButtonColor,
   });
 
   final List<String> ingredientName;
   final List<Color> ingredientColor;
   final addButton;
+  final addButtonColor;
 
   void addFoodButtonPage(BuildContext context) {
     Navigator.of(context).push(
@@ -21,6 +23,7 @@ class AddFoodButton extends StatelessWidget {
           ingredientName: ingredientName,
           ingredientColor: ingredientColor,
           addButton: addButton,
+          addButtonColor: addButtonColor,
         ),
       ),
     );
