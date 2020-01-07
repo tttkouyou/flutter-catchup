@@ -71,7 +71,9 @@ class AddFoodButtonPageState extends State<AddFoodButtonPage> {
           Container(
             margin: EdgeInsets.only(bottom: 30.0),
             child: RaisedButton(
-              child: Text('背景色の変更'),
+              child: Text('背景色の変更',style: TextStyle(
+                color: Colors.white,
+              )),
               color: Colors.orange,
               shape: BeveledRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0),
