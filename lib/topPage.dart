@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import './productButton.dart';
+import './goodsButton.dart';
 import './purchasePlanButton.dart';
 import './drawerMenu.dart';
 
@@ -49,7 +49,7 @@ class TopPage extends StatelessWidget {
             crossAxisCount: 3,
           ),
           itemBuilder: (context, index) {
-            return ProductButton(
+            return GoodsButton(
               scaffoldKey: scaffoldKey,
               index: index,
               purchasePlanList: purchasePlanList,

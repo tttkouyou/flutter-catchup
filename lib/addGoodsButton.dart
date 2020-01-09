@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import './addFoodButtonPage.dart';
+import './addGoodsButtonPage.dart';
 
-class AddFoodButton extends StatelessWidget {
-  AddFoodButton({
+class AddGoodsButton extends StatelessWidget {
+  AddGoodsButton({
     Key key,
     this.ingredientName,
     this.ingredientColor,
@@ -16,10 +16,10 @@ class AddFoodButton extends StatelessWidget {
   final addButton;
   final addButtonColor;
 
-  void addFoodButtonPage(BuildContext context) {
+  void addGoodsButtonPage(BuildContext context) {
     Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (context) => AddFoodButtonPage(
+        builder: (context) => AddGoodsButtonPage(
           ingredientName: ingredientName,
           ingredientColor: ingredientColor,
           addButton: addButton,
@@ -34,13 +34,13 @@ class AddFoodButton extends StatelessWidget {
     return ListTile(
       leading: Icon(Icons.add_circle_outline),
       title: Text(
-        '食品ボタンを追加',
+        '商品ボタンを追加',
         style: TextStyle(
           color: Colors.orange[500],
           fontSize: 20,
         ),
       ),
-      onTap: () => addFoodButtonPage(context),
+      onTap: () => addGoodsButtonPage(context),
     );
   }
 }

@@ -3,8 +3,8 @@ import 'package:flutter/rendering.dart';
 
 import './selectColor.dart';
 
-class AddFoodButtonPage extends StatelessWidget {
-  AddFoodButtonPage({
+class AddGoodsButtonPage extends StatelessWidget {
+  AddGoodsButtonPage({
     Key key,
     this.ingredientName,
     this.ingredientColor,

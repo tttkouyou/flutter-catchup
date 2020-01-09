@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import './addFoodButton.dart';
+import './addGoodsButton.dart';
 
 class DrawerMenu extends StatelessWidget {
   DrawerMenu({
@@ -29,7 +29,7 @@ class DrawerMenu extends StatelessWidget {
               ),
             ),
           ),
-          AddFoodButton(
+          AddGoodsButton(
             addButton: addButton,
             addButtonColor: addButtonColor,
           ),

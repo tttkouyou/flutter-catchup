@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-class ProductButton extends StatelessWidget {
-  ProductButton({
+class GoodsButton extends StatelessWidget {
+  GoodsButton({
     Key key,
     this.scaffoldKey,
     this.index,
