@@ -1,19 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-class SelectColor extends StatefulWidget {
-  SelectColor({
-    Key key,
-    this.addButtonColor,
-  });
+class SelectColor extends StatelessWidget {
 
-  final addButtonColor;
-
-  @override
-  SelectColorState createState() => SelectColorState();
-}
-
-class SelectColorState extends State<SelectColor> {
   List<Color> colorCode = [
     Colors.red[500],
     Colors.blue[500],

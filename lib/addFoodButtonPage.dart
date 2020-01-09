@@ -3,7 +3,7 @@ import 'package:flutter/rendering.dart';
 
 import './selectColor.dart';
 
-class AddFoodButtonPage extends StatefulWidget {
+class AddFoodButtonPage extends StatelessWidget {
   AddFoodButtonPage({
     Key key,
     this.ingredientName,
@@ -17,20 +17,15 @@ class AddFoodButtonPage extends StatefulWidget {
   final addButton;
   final addButtonColor;
 
-  @override
-  AddFoodButtonPageState createState() => AddFoodButtonPageState();
-}
-
-class AddFoodButtonPageState extends State<AddFoodButtonPage> {
   final _addName = TextEditingController();
 
   selectColor(BuildContext context, addButtonColor) {
     Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (context) => SelectColor(addButtonColor: addButtonColor),
+        builder: (context) => SelectColor(),
       ),
     ).then((result) {
-    widget.addButtonColor(result);
+    addButtonColor(result);
     });
   }
 
@@ -78,12 +73,12 @@ class AddFoodButtonPageState extends State<AddFoodButtonPage> {
               shape: BeveledRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0),
               ),
-              onPressed: () => selectColor(context,widget.addButtonColor),
+              onPressed: () => selectColor(context,addButtonColor),
             ),
           ),
           RaisedButton(
             onPressed: () {
-              widget.addButton(_addName.text);
+              addButton(_addName.text);
               Navigator.of(context).pop();
             },
             child: Text('追加'),

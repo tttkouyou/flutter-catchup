@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-class ProductButton extends StatefulWidget {
+class ProductButton extends StatelessWidget {
   ProductButton({
     Key key,
     this.scaffoldKey,
@@ -21,11 +21,6 @@ class ProductButton extends StatefulWidget {
   final List<String> ingredientName;
   final List<Color> ingredientColor;
 
-  @override
-  ProductButtonState createState() => ProductButtonState();
-}
-
-class ProductButtonState extends State<ProductButton> {
   int count = 0;
 
   @override
@@ -42,17 +37,17 @@ class ProductButtonState extends State<ProductButton> {
           borderRadius: BorderRadius.circular(25.0),
         ),
         textColor: Colors.white,
-        color: widget.ingredientColor[widget.index.toInt()],
+        color: ingredientColor[index.toInt()],
         child: Text(
-          widget.ingredientName[widget.index.toInt()],
+          ingredientName[index.toInt()],
           style: TextStyle(fontSize: 30.0),
         ),
         onPressed: () {
-          widget.additem(widget.ingredientName[widget.index]);
+          additem(ingredientName[index]);
           count += 1;
           final snackBar = SnackBar(
             content: Text(
-                widget.ingredientName[widget.index.toInt()] + 'を追加しました。合計：$count'),
+                ingredientName[index.toInt()] + 'を追加しました。合計：$count'),
             backgroundColor: Colors.orange[300],
             action: SnackBarAction(
               label: '閉じる',
@@ -61,7 +56,7 @@ class ProductButtonState extends State<ProductButton> {
               },
             ),
           );
-          widget.scaffoldKey.currentState.showSnackBar(snackBar);
+          scaffoldKey.currentState.showSnackBar(snackBar);
         },
       ),
     );
