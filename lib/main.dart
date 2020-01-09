@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import './articleList.dart';
 import './topPage.dart';
 
 void main() {
@@ -53,10 +52,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'buyer support App',
-      theme: ThemeData(),
-      home: TopPage(
+    return TopPage(
         purchasePlanList: purchasePlanList,
         additem: additem,
         scaffoldKey: scaffoldKey,
@@ -64,10 +60,6 @@ class _MyAppState extends State<MyApp> {
         ingredientColor: ingredientColor,
         addButton: addButton,
         addButtonColor: addButtonColor,
-      ),
-      routes: {
-        '/ArticleList': (BuildContext context) => ArticleList(),
-      },
     );
   }
 }

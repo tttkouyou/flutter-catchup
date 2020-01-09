@@ -25,36 +25,40 @@ class TopPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      key: scaffoldKey,
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: Text('お買い物サポート'),
-        backgroundColor: Colors.orange,
-      ),
-      drawer: DrawerMenu(
-        addButton: addButton,
-        addButtonColor: addButtonColor,
-      ),
-      floatingActionButton:
-          PurchasePlanButton(purchasePlanList: purchasePlanList),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      body: GridView.builder(
-        // itemCount: listCount,
-        itemCount: ingredientName.length,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 3,
+    return MaterialApp(
+      title: 'buyer support App',
+      theme: ThemeData(),
+      home: Scaffold(
+        key: scaffoldKey,
+        backgroundColor: Colors.white,
+        appBar: AppBar(
+          title: Text('お買い物サポート'),
+          backgroundColor: Colors.orange,
         ),
-        itemBuilder: (context, index) {
-          return ProductButton(
-            scaffoldKey: scaffoldKey,
-            index: index,
-            purchasePlanList: purchasePlanList,
-            additem: additem,
-            ingredientName: ingredientName,
-            ingredientColor: ingredientColor,
-          );
-        },
+        drawer: DrawerMenu(
+          addButton: addButton,
+          addButtonColor: addButtonColor,
+        ),
+        floatingActionButton:
+            PurchasePlanButton(purchasePlanList: purchasePlanList),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+        body: GridView.builder(
+          // itemCount: listCount,
+          itemCount: ingredientName.length,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 3,
+          ),
+          itemBuilder: (context, index) {
+            return ProductButton(
+              scaffoldKey: scaffoldKey,
+              index: index,
+              purchasePlanList: purchasePlanList,
+              additem: additem,
+              ingredientName: ingredientName,
+              ingredientColor: ingredientColor,
+            );
+          },
+        ),
       ),
     );
   }
