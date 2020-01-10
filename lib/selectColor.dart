@@ -42,7 +42,6 @@ class SelectColor extends StatelessWidget {
                 style: TextStyle(fontSize: 25.0),
               ),
               onPressed: () {
-                // print(colors[index]);
                 Navigator.pop(context, colors.values.elementAt(index));
               },
             ),
