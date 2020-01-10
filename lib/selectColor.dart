@@ -2,23 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 class SelectColor extends StatelessWidget {
-
-  List<Color> colorCode = [
-    Colors.red[500],
-    Colors.blue[500],
-    Colors.yellow[500],
-    Colors.orange,
-    Colors.grey,
-    Colors.black,
-  ];
-  List<String> colorName = [
-    '赤',
-    '青',
-    '黄色',
-    '橙色',
-    '鼠色',
-    '黒',
-  ];
+  final Map colors = {
+    '赤': Colors.red[500],
+    '青': Colors.blue[500],
+    '黄色': Colors.yellow[500],
+    '橙色': Colors.orange,
+    '鼠色': Colors.grey,
+    '黒': Colors.black,
+  };
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +19,7 @@ class SelectColor extends StatelessWidget {
         backgroundColor: Colors.orange,
       ),
       body: GridView.builder(
-        itemCount: colorCode.length,
+        itemCount: colors.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 4,
         ),
@@ -45,13 +36,14 @@ class SelectColor extends StatelessWidget {
                 borderRadius: BorderRadius.circular(25.0),
               ),
               textColor: Colors.white,
-              color: colorCode[index],
+              color: colors.values.elementAt(index),
               child: Text(
-                colorName[index],
+                colors.keys.elementAt(index),
                 style: TextStyle(fontSize: 25.0),
               ),
               onPressed: () {
-                Navigator.pop(context,colorCode[index]);
+                // print(colors[index]);
+                Navigator.pop(context, colors.values.elementAt(index));
               },
             ),
           );
