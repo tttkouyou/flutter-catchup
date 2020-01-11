@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import './addGoodsButton.dart';
+import './AddGoodsButton.dart';
 
 class DrawerMenu extends StatelessWidget {
   DrawerMenu({

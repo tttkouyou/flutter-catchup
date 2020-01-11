@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import './goodsButton.dart';
-import './purchasePlanButton.dart';
-import './drawerMenu.dart';
+import './GoodsButton.dart';
+import './PurchasePlanButton.dart';
+import './DrawerMenu.dart';
 
 class TopPage extends StatelessWidget {
   TopPage({

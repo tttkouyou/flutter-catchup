@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import './purchasePlanPage.dart';
+import './PurchasePlanPage.dart';
 
 class PurchasePlanButton extends StatelessWidget {
   PurchasePlanButton({

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-import './selectColor.dart';
+import './SelectColor.dart';
 
 class AddGoodsButtonPage extends StatelessWidget {
   AddGoodsButtonPage({

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import './addGoodsButtonPage.dart';
+import './AddGoodsButtonPage.dart';
 
 class AddGoodsButton extends StatelessWidget {
   AddGoodsButton({
