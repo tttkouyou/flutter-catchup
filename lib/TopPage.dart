@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import './GoodsButton.dart';
 import './DrawerMenu.dart';
-import './PurchasePlanPage.dart';
+import './PurchaseList.dart';
 
 class TopPage extends StatelessWidget {
   TopPage({
@@ -73,7 +73,7 @@ class PurchasePlanButton extends StatelessWidget {
   void purchasePage(BuildContext context, _purchasePlanList) {
     Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (context) => PurchasePlanPage(purchasePlanList: _purchasePlanList),
+        builder: (context) => PurchaseList(purchasePlanList: _purchasePlanList),
       ),
     );
     // Navigator.pushNamed(context, "/ArticleList");
