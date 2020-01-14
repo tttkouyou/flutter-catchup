@@ -3,8 +3,8 @@ import 'package:flutter/rendering.dart';
 
 import './SelectColor.dart';
 
-class AddGoodsButtonPage extends StatelessWidget {
-  AddGoodsButtonPage({
+class AddGoodsButton extends StatelessWidget {
+  AddGoodsButton({
     Key key,
     this.ingredientName,
     this.ingredientColor,
@@ -20,12 +20,14 @@ class AddGoodsButtonPage extends StatelessWidget {
   final _addName = TextEditingController();
 
   selectColor(BuildContext context, addButtonColor) {
-    Navigator.of(context).push(
+    Navigator.of(context)
+        .push(
       MaterialPageRoute(
         builder: (context) => SelectColor(),
       ),
-    ).then((result) {
-    addButtonColor(result);
+    )
+        .then((result) {
+      addButtonColor(result);
     });
   }
 
@@ -66,14 +68,15 @@ class AddGoodsButtonPage extends StatelessWidget {
           Container(
             margin: EdgeInsets.only(bottom: 30.0),
             child: RaisedButton(
-              child: Text('背景色の変更',style: TextStyle(
-                color: Colors.white,
-              )),
+              child: Text('背景色の変更',
+                  style: TextStyle(
+                    color: Colors.white,
+                  )),
               color: Colors.orange,
               shape: BeveledRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0),
               ),
-              onPressed: () => selectColor(context,addButtonColor),
+              onPressed: () => selectColor(context, addButtonColor),
             ),
           ),
           RaisedButton(
