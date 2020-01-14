@@ -63,7 +63,7 @@ class AddGoodsButton extends StatelessWidget {
   void addGoodsButtonPage(BuildContext context) {
     Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (context) => AddGoodsButton(
+        builder: (context) => AddGoodsButtonForm(
           addButton: addButton,
           addButtonColor: addButtonColor,
         ),
