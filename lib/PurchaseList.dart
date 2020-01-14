@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class PurchasePlanPage extends StatelessWidget {
-  PurchasePlanPage({
+class PurchaseList extends StatelessWidget {
+  PurchaseList({
     this.purchasePlanList,
   });
   final List<String> purchasePlanList;
