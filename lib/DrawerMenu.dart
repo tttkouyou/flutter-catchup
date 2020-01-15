@@ -18,12 +18,12 @@ class DrawerMenu extends StatelessWidget {
       child: ListView(
         children: <Widget>[
           DrawerHeader(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Colors.orange,
             ),
-            child: Text(
+            child: const Text(
               'メニュー',
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.white,
                 fontSize: 28,
               ),
@@ -34,7 +34,7 @@ class DrawerMenu extends StatelessWidget {
             addButtonColor: addButtonColor,
           ),
           ListTile(
-            leading: Icon(Icons.settings),
+            leading: const Icon(Icons.settings),
             title: Text(
               '設定',
               style: TextStyle(

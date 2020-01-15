@@ -35,17 +35,17 @@ class AddGoodsButtonForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('食品ボタンを追加'),
+        title: const Text('食品ボタンを追加'),
         backgroundColor: Colors.orange,
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Container(
-            padding: EdgeInsets.all(50.0),
+            padding: const EdgeInsets.all(50.0),
             child: TextField(
               controller: _addName,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 20.0,
                 color: Colors.orange,
                 backgroundColor: Colors.white,
@@ -53,12 +53,12 @@ class AddGoodsButtonForm extends StatelessWidget {
               decoration: InputDecoration(
                 border: const OutlineInputBorder(),
                 labelText: '食品名の入力',
-                labelStyle: TextStyle(
+                labelStyle: const TextStyle(
                   backgroundColor: Colors.white,
                   color: Colors.orange,
                 ),
                 hintText: '食品名を入力してください',
-                hintStyle: TextStyle(
+                hintStyle: const TextStyle(
                   backgroundColor: Colors.white,
                   color: Colors.orange,
                 ),
@@ -66,10 +66,10 @@ class AddGoodsButtonForm extends StatelessWidget {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(bottom: 30.0),
+            margin: const EdgeInsets.only(bottom: 30.0),
             child: RaisedButton(
-              child: Text('背景色の変更',
-                  style: TextStyle(
+              child: const Text('背景色の変更',
+                  style: const TextStyle(
                     color: Colors.white,
                   )),
               color: Colors.orange,
@@ -84,7 +84,7 @@ class AddGoodsButtonForm extends StatelessWidget {
               addButton(_addName.text);
               Navigator.of(context).pop();
             },
-            child: Text('追加'),
+            child: const Text('追加'),
           ),
         ],
       ),

@@ -26,7 +26,7 @@ class GoodsButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(27),
+      padding: const EdgeInsets.all(27),
       width: 83.0,
       height: 83.0,
       decoration: BoxDecoration(

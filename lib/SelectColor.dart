@@ -15,7 +15,7 @@ class SelectColor extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('食品ボタンの背景色を設定'),
+        title: const Text('食品ボタンの背景色を設定'),
         backgroundColor: Colors.orange,
       ),
       body: GridView.builder(

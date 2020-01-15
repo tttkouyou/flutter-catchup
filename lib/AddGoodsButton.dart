@@ -41,7 +41,7 @@ class AddGoodsButtonForm extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Container(
-            padding: EdgeInsets.all(50.0),
+            padding: const EdgeInsets.all(50.0),
             child: TextField(
               controller: _addName,
               style: TextStyle(
@@ -50,14 +50,14 @@ class AddGoodsButtonForm extends StatelessWidget {
                 backgroundColor: Colors.white,
               ),
               decoration: InputDecoration(
-                border: const OutlineInputBorder(),
+                border: OutlineInputBorder(),
                 labelText: '商品名の入力',
                 labelStyle: TextStyle(
                   backgroundColor: Colors.white,
                   color: Colors.orange,
                 ),
                 hintText: '商品名を入力してください',
-                hintStyle: TextStyle(
+                hintStyle: const TextStyle(
                   backgroundColor: Colors.white,
                   color: Colors.orange,
                 ),
@@ -67,10 +67,12 @@ class AddGoodsButtonForm extends StatelessWidget {
           Container(
             margin: EdgeInsets.only(bottom: 30.0),
             child: RaisedButton(
-              child: Text('背景色の変更',
-                  style: TextStyle(
-                    color: Colors.white,
-                  )),
+              child: const Text(
+                '背景色の変更',
+                style: const TextStyle(
+                  color: Colors.white,
+                ),
+              ),
               color: Colors.orange,
               shape: BeveledRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0),
@@ -83,7 +85,7 @@ class AddGoodsButtonForm extends StatelessWidget {
               addButton(_addName.text);
               Navigator.of(context).pop();
             },
-            child: Text('追加'),
+            child: const Text('追加'),
           ),
         ],
       ),

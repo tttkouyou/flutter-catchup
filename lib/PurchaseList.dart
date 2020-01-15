@@ -10,7 +10,7 @@ class PurchaseList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('購入予定'),
+        title: const Text('購入予定'),
         backgroundColor: Colors.orange,
       ),
       body: ListView.builder(

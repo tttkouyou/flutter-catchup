@@ -84,7 +84,7 @@ class PurchasePlanButton extends StatelessWidget {
       width: 300,
       child: FloatingActionButton.extended(
         onPressed: () => purchasePage(context, purchasePlanList),
-        label: Text('購入予定'),
+        label: const Text('購入予定'),
         // backgroundColor: Colors.orange[300],
       ),
     );
