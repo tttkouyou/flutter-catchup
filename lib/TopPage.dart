@@ -32,7 +32,7 @@ class TopPage extends StatelessWidget {
       home: Scaffold(
         key: scaffoldKey,
         appBar: AppBar(
-          title: Text('お買い物サポート'),
+          title: const Text('お買い物サポート'),
         ),
         drawer: DrawerMenu(
           addButton: addButton,
