@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import './GoodsButton.dart';
 import './DrawerMenu.dart';
 import './PurchaseList.dart';
+import './theme/Theme.dart';
 
 class TopPage extends StatelessWidget {
   TopPage({
@@ -27,13 +28,11 @@ class TopPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'buyer support App',
-      theme: ThemeData(),
+      theme: theme(),
       home: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Colors.white,
         appBar: AppBar(
           title: Text('お買い物サポート'),
-          backgroundColor: Colors.orange,
         ),
         drawer: DrawerMenu(
           addButton: addButton,
@@ -86,7 +85,7 @@ class PurchasePlanButton extends StatelessWidget {
       child: FloatingActionButton.extended(
         onPressed: () => purchasePage(context, purchasePlanList),
         label: Text('購入予定'),
-        backgroundColor: Colors.orange[300],
+        // backgroundColor: Colors.orange[300],
       ),
     );
   }

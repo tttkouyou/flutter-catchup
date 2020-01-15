@@ -36,7 +36,6 @@ class AddGoodsButtonForm extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('商品ボタンを追加'),
-        backgroundColor: Colors.orange,
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
