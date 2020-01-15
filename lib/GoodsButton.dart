@@ -46,11 +46,11 @@ class GoodsButton extends StatelessWidget {
           additem(ingredientName[index]);
           count += 1;
           final snackBar = SnackBar(
-            content: Text(
-                ingredientName[index.toInt()] + 'を追加しました。合計：$count'),
+            content: Text(ingredientName[index.toInt()] + 'を追加しました。合計：$count'),
             backgroundColor: Colors.orange[300],
             action: SnackBarAction(
               label: '閉じる',
+              textColor: Colors.blue,
               onPressed: () {
                 // Some code to undo the change.
               },
