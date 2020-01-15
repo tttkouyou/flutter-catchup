@@ -53,13 +53,13 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return TopPage(
-        purchasePlanList: purchasePlanList,
-        additem: additem,
-        scaffoldKey: scaffoldKey,
-        ingredientName: ingredientName,
-        ingredientColor: ingredientColor,
-        addButton: addButton,
-        addButtonColor: addButtonColor,
+      purchasePlanList: purchasePlanList,
+      additem: additem,
+      scaffoldKey: scaffoldKey,
+      ingredientName: ingredientName,
+      ingredientColor: ingredientColor,
+      addButton: addButton,
+      addButtonColor: addButtonColor,
     );
   }
 }
