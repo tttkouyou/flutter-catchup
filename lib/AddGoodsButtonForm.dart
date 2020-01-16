@@ -35,7 +35,7 @@ class AddGoodsButtonForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('食品ボタンを追加'),
+        title: const Text('商品ボタンを追加'),
         backgroundColor: Colors.orange,
       ),
       body: Column(
@@ -52,12 +52,12 @@ class AddGoodsButtonForm extends StatelessWidget {
               ),
               decoration: InputDecoration(
                 border: const OutlineInputBorder(),
-                labelText: '食品名の入力',
+                labelText: '商品名の入力',
                 labelStyle: const TextStyle(
                   backgroundColor: Colors.white,
                   color: Colors.orange,
                 ),
-                hintText: '食品名を入力してください',
+                hintText: '商品名を入力してください',
                 hintStyle: const TextStyle(
                   backgroundColor: Colors.white,
                   color: Colors.orange,
