@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import './GoodsButton.dart';
+import './Goods.dart';
 import './DrawerMenu.dart';
 import './PurchaseList.dart';
 import './theme/Theme.dart';
@@ -42,13 +42,12 @@ class TopPage extends StatelessWidget {
             PurchasePlanButton(purchasePlanList: purchasePlanList),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
         body: GridView.builder(
-          // itemCount: listCount,
           itemCount: ingredientName.length,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 3,
           ),
           itemBuilder: (context, index) {
-            return GoodsButton(
+            return Goods(
               scaffoldKey: scaffoldKey,
               index: index,
               purchasePlanList: purchasePlanList,
@@ -75,7 +74,6 @@ class PurchasePlanButton extends StatelessWidget {
         builder: (context) => PurchaseList(purchasePlanList: _purchasePlanList),
       ),
     );
-    // Navigator.pushNamed(context, "/ArticleList");
   }
 
   @override
@@ -85,7 +83,6 @@ class PurchasePlanButton extends StatelessWidget {
       child: FloatingActionButton.extended(
         onPressed: () => purchasePage(context, purchasePlanList),
         label: const Text('購入予定'),
-        // backgroundColor: Colors.orange[300],
       ),
     );
   }

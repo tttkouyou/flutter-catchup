@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-class GoodsButton extends StatelessWidget {
-  GoodsButton({
+class Goods extends StatelessWidget {
+  Goods({
     Key key,
     this.scaffoldKey,
     this.index,
@@ -50,7 +50,7 @@ class GoodsButton extends StatelessWidget {
             backgroundColor: Colors.orange[300],
             action: SnackBarAction(
               label: '閉じる',
-              textColor: Colors.blue,
+              textColor: Colors.white,
               onPressed: () {
                 // Some code to undo the change.
               },

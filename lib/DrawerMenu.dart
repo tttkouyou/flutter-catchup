@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import './AddGoodsButtonForm.dart';
+import './AddGoodsForm.dart';
 
 class DrawerMenu extends StatelessWidget {
   DrawerMenu({
@@ -63,7 +63,7 @@ class AddGoodsButton extends StatelessWidget {
   void addGoodsButtonPage(BuildContext context) {
     Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (context) => AddGoodsButtonForm(
+        builder: (context) => AddGoodsForm(
           addButton: addButton,
           addButtonColor: addButtonColor,
         ),

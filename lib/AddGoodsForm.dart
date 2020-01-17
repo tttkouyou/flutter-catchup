@@ -3,8 +3,8 @@ import 'package:flutter/rendering.dart';
 
 import './SelectColor.dart';
 
-class AddGoodsButtonForm extends StatelessWidget {
-  AddGoodsButtonForm({
+class AddGoodsForm extends StatelessWidget {
+  AddGoodsForm({
     Key key,
     this.ingredientName,
     this.ingredientColor,
