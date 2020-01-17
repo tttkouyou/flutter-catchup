@@ -58,8 +58,11 @@ This project is my little first step.
 
 ## 関数
 
-| 関数名 | 役割 |
-| :----- | :--- |
+| 関数名         | 処理                                                               | 役割                               |
+| :------------- | :----------------------------------------------------------------- | :--------------------------------- |
+| additem        | 引数に入れたString型のアイテムを purchasePlanList(配列) に追加する | 商品一覧に表示される項目を追加する |
+| addButton      | 引数に入れたString型のアイテムを ingredientName(配列) に追加する   | 商品ボタンの名前を追加する         |
+| addButtonColor | 引数に入れたアイテムを ingredientColor(配列) に追加する            | 商品ボタンの背景色を追加する       |
 
 ## 使用したライブラリ
 
@@ -68,9 +71,12 @@ This project is my little first step.
 
 ## 階層
 
-| 1階層     | 2階層                   | 3階層                 |
-| :-------- | :---------------------- | :-------------------- |
-| main.dart |                         |                       |
-|           | productButton.dart      |                       |
-|           | purchasePlanButton.dart |                       |
-|           |                         | purchasePlanPage.dart |
+| 1階層     | 2階層        | 3階層             | 4階層             | 5階層            |
+| :-------- | :----------- | :---------------- | :---------------- | :--------------- |
+| main.dart |              |                   |                   |                  |
+|           | TopPage.dart |                   |                   |                  |
+|           |              | PurchaseList.dart |                   |                  |
+|           |              | Goods.dart        |                   |                  |
+|           |              | DrawerMenu.dart   |                   |                  |
+|           |              |                   | AddGoodsForm.dart |                  |
+|           |              |                   |                   | SelectColor.dart |
